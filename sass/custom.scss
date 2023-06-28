@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=PT+Sans&display=swap');
+
+// Fonts & Headersets
+@mixin header1 {
+    font-family: 'PT Mono', monospace;
+    font-size: 45px;
+}
+
+@mixin header2 {
+    font-family: 'PT Mono', monospace;
+    font-size: 35px;
+}
+
+@mixin header3 {
+    font-family: 'PT Mono', monospace;
+    font-size: 30px;
+}
+
+@mixin header4 {
+    font-family: 'PT Mono', monospace;
+    font-size: 25px;
+}
+
+@mixin header5 {
+    font-family: 'PT Mono', monospace;
+    font-size: 20px;
+}
+
+@mixin header6 {
+    font-family: 'PT Mono', monospace;
+    font-size: 18px;
+}
+
+@mixin para {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+}
+
+// Colours
+$darkgreen: #283223;
+$lightgreen: #C0D684;
+$yellow: #F3F9D2;
+$lightblue: #DCF3F4;
+$darkblue: #5AA9B5;
+
+// Buttons
+@mixin cta {
+    width: 150px;
+    height: 50px;
+    background-color: $lightblue;
+    border: solid 2px $darkgreen;
+    border-radius: 20px;
+    color: $darkgreen;
+}
+
+// Forms
+
+html,
+body {
+    position: relative;
+    height: 100%;
+    color: $darkgreen;
+
+    .modal-open {
+        .modal-backdrop {
+            display: none;
+        }
+    }
+}
+
+.swiper {
+    height: 100vh;
+
+    .swiper-wrapper .swiper-slide {
+        background-color: $yellow;
+
+        .navigation {
+            margin: 30px 50px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            #logo, #logo2 {
+                width: 250px;
+                justify-content: flex-start;
+            }
+
+            .nav {
+                @include header5;
+                font-weight: bold;
+
+                li a {
+                    @include header5;
+                    font-weight: bold;
+                    color: $darkgreen;
+                    margin: 0 10px;
+                }
+
+                button {
+                    @include cta;
+                    margin: 0 10px;
+                }
+            }
+        }
+
+        .hero {
+            height: 65vh;
+            width: 85vw;
+            background-color: $lightgreen;
+            border: solid $darkgreen 2px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+
+            .hero-text {
+                width: 55%;
+                margin: 40px;
+                padding-top: 25px;
+
+                h1 {
+                    @include header1;
+                    display: flex;
+                    align-items: center;
+                    color: $darkgreen;
+
+                    img {
+                        width: 200px;
+                        margin-right: 20px;
+                    }
+                }
+
+                h3 {
+                    @include para;
+                    font-size: 30px;
+                    line-height: 40px;
+                    margin-top: 40px;
+                    margin-left: 10px;
+                    color: $darkgreen;
+                }
+            }
+
+            .search-section {
+                width: 25%;
+                margin: 50px 50px;
+                color: $darkgreen;
+
+                h5 {
+                    @include header5;
+                    font-weight: bold;
+                }
+
+                label {
+                    @include header5;
+                    font-size: 16px;
+                    margin-top: 15px;
+                }
+
+                input {
+                    @include para;
+                }
+
+                .form-control, .form-select {
+                    background-color: rgba(255, 255, 255, 0);
+                    border: 0;
+                    border-bottom: solid 2px $darkgreen;
+                    border-radius: 0;
+                }
+
+                #message {
+                    @include para;
+                    margin: 5px 0;
+                }
+
+                button {
+                    @include cta;
+                    margin-top: 30px;
+                    margin-left: 25%;
+                }
+            }
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 10px 50px;
+            background-color: $darkblue;
+            border-top: solid 2px $darkgreen;
+            border-left: solid 2px $darkgreen;
+            border-right: solid 2px $darkgreen;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+
+            img {
+                width: 125px;
+            }
+
+            p,
+            li,
+            a {
+                @include para;
+                color: $yellow;
+            }
+
+            .fa-brands {
+                color: $yellow;
+            }
+        }
+
+        .results-section {
+            height: 65vh;
+            width: 80vw;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            color: $darkgreen;
+
+            .search-section {
+                width: 25%;
+                margin: 65px 0;
+
+                h5 {
+                    @include header5;
+                    font-weight: bold;
+                }
+
+                label {
+                    @include header5;
+                    font-size: 16px;
+                    margin-top: 15px;
+                }
+
+                input {
+                    @include para;
+                }
+
+                .form-control, .form-select {
+                    background-color: rgba(255, 255, 255, 0);
+                    border: 0;
+                    border-bottom: solid 2px $darkgreen;
+                    border-radius: 0;
+                }
+
+                #message {
+                    @include para;
+                    margin: 5px 0;
+                }
+
+                button {
+                    @include cta;
+                    margin-top: 30px;
+                }
+            }
+
+            .listings {
+                width: 65%;
+                background-color: $lightgreen;
+                border: solid 2px $darkgreen;
+                border-radius: 50px;
+                overflow: scroll;
+
+                h4 {
+                    @include header4;
+                    color: $darkgreen;
+                    margin: 25px 35px 10px;
+                }
+
+                .card {
+                    margin: 15px;
+                    background-color: $yellow;
+                    border: solid 1px $darkgreen;
+                    border-radius: 20px;
+                    color: $darkgreen;
+
+                    img {
+                        margin: 15px;
+                        border: solid 1px $darkgreen;
+                        border-radius: 10px;
+                        width: 100%;
+                        height: 80%;
+                    }
+
+                    a {
+                        @include header5;
+                        color: $darkgreen;
+                        text-decoration: none;
+                    }
+
+                    h6 {
+                        @include header6;
+                    }
+
+                    .card-body-right {
+                        position: absolute;
+                        bottom: 16px;
+                        text-align: right;
+
+                        h6 {
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+            }
+
+            .modal {
+                background-color: #f3f9d284;
+
+                .modal-dialog {
+                    margin-top: 9%;
+                }
+            }
+
+            .modal-content {
+                background-color: $lightgreen;
+                border: solid 2px $darkgreen;
+                border-radius: 30px;
+                color: $darkgreen;
+
+                .modal-header {
+                    display: flex;
+                    align-items: center;
+
+                    h5 {
+                        @include header5;
+                        margin: 0;
+                    }
+                }
+
+                .modal-body {
+                    padding: 0 20px;
+                    margin-bottom: 20px;
+
+                    #modalVisuals {
+                        margin-bottom: 15px;
+                        img {
+                            padding: 0;
+                            border: solid 2px $darkgreen;
+                            border-radius: 15px
+                        }
+                    }
+
+                    h6 {
+                        @include header6;
+                    }
+
+                    p {
+                        @include para;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                #modalFooter {
+                    display: flex;
+                    align-items: center;
+                    margin: 0;
+                    padding: 0;
+                    background-color: $darkblue;
+                    border-radius: 30px;
+                    border: solid 1px $darkgreen;
+
+                    h6 {
+                        padding: 0 20px;
+                        margin-bottom: 0;
+                    }
+
+                    .book-btn {
+                        padding: 0
+                    }
+
+                    button {
+                        @include cta;
+                        @include header5;
+                        width: 100%;
+                        border-radius: 30px;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+}

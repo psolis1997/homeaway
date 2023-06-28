@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Daterange Picker -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <!-- Jquery UI CSS -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <!-- Swiper JS CSS File -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <!-- Minified Custom CSS -->
+    <link rel="stylesheet" href="css/custom.min.css">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>HomeAway</title>
+</head>
+
+<body>
+
+    <!-- Swiper -->
+
+    <div class="swiper mySwiper swiper-v">
+        <div class="swiper-wrapper">
+
+            <!-- Home Slide -->
+            <div class="swiper-slide" id="home">
+
+                <!-- Navigation -->
+                <div class="navigation">
+                    <a href="#home" class="homeLogo"><img src="img/logo.svg" alt="HomeAway logo" id="logo"></a>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Sign in/Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary"><i
+                                    class="fa-solid fa-magnifying-glass"></i></button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Body -->
+                <div class="hero">
+                    <div class="hero-text">
+                        <h1><img src="img/logo2.svg" alt="HomeAway logo"> from home!</h1>
+                        <h3>Planning your next trip?
+                            <br>
+                            Find the best stays Aotearoa New Zealand has to offer with HomeAway.
+                            <br>
+                            <br>
+                            Start your search now!</h3>
+                    </div>
+                    <div class="search-section">
+                        <h5>Ready, set, search!</h5>
+                        <div>
+                            <form id="searchForm" data-parsley-validate="" autocomplete="off">
+                                <label for="pickLocation">Location</label>
+                                <select id="pickLocation" class="form-select">
+                                    <option selected>Choose a city...</option>
+                                    <option value="Auckland">Auckland</option>
+                                    <option value="Wellington">Wellington</option>
+                                </select>
+                                <label for="inputDateSelection">Date</label>
+                                <input id="inputDateSelection" type="text" name="daterange" class="form-control"
+                                    value="" data-parsley-required-message="Please enter valid dates of stay.">
+                                <label for="guestNumber">Guests</label>
+                                <select id="guestNumber" class="form-select">
+                                    <option selected>0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                                <p id="message"></p>
+                                <button type="button" class="btn btn-primary" id="searchBtn"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="d-flex flex-wrap justify-content-between align-items-center">
+                    <div class="col-md-3 d-flex justify-content-between align-items-center">
+                        <img src="img/TNZ.png" alt="">
+                        <p class="mb-3 mb-md-0">HomeAway 2022 ©</p>
+                    </div>
+
+                    <ul class="nav col-md-4 justify-content-between align-items-center list-unstyled d-flex">
+                        <li><a class="nav-link active" aria-current="page" href="#">Terms and Conditions</a></li>
+                        <li><a class="nav-link active" aria-current="page" href="#">Privacy</a></li>
+                        <li><i class="fa-brands fa-instagram"></i></li>
+                        <li><i class="fa-brands fa-twitter"></i></li>
+                        <li><i class="fa-brands fa-facebook"></i></li>
+                    </ul>
+                </footer>
+
+            </div>
+            <!-- /Home Slide/ -->
+
+            <!-- Results Slide -->
+            <div class="swiper-slide" id="results">
+
+                <!-- Navigation -->
+                <div class="navigation">
+                    <a href="#home" class="homeLogo"><img src="img/logo.svg" alt="HomeAway logo" id="logo2"></a>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Sign in/Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary"><i
+                                    class="fa-solid fa-magnifying-glass"></i></button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Results -->
+                <div class="results-section" id="resultsSection">
+                    <div class="search-section">
+                        <h5>Refine your search:</h5>
+                        <div>
+                            <form id="refineSearchForm" data-parsley-validate="" autocomplete="off">
+                                <label for="refinePickLocation">Location</label>
+                                <select id="refinePickLocation" class="form-select">
+                                    <option selected>Choose a city...</option>
+                                    <option value="Auckland">Auckland</option>
+                                    <option value="Wellington">Wellington</option>
+                                </select>
+                                <label for="refineInputDateSelection">Date</label>
+                                <input id="refineInputDateSelection" type="text" name="daterange" class="form-control"
+                                    value="" data-parsley-required-message="Please enter valid dates of stay.">
+                                <label for="refineGuestNumber">Guests</label>
+                                <select id="refineGuestNumber" class="form-select">
+                                    <option selected>0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                                <p id="refineMessage"></p>
+                                <button type="button" class="btn btn-primary"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="listings">
+                        <h4>Browse your options:</h4>
+                        <div id="listingProfile">
+
+                        </div>
+                    </div>
+                    <div class="modal" tabindex="-1" id="viewModal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content" id="modalResult">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="d-flex flex-wrap justify-content-between align-items-center">
+                    <div class="col-md-3 d-flex justify-content-between align-items-center">
+                        <img src="img/TNZ.png" alt="">
+                        <p class="mb-3 mb-md-0">HomeAway 2022 ©</p>
+                    </div>
+
+                    <ul class="nav col-md-4 justify-content-between align-items-center list-unstyled d-flex">
+                        <li><a class="nav-link active" aria-current="page" href="#">Terms and Conditions</a></li>
+                        <li><a class="nav-link active" aria-current="page" href="#">Privacy</a></li>
+                        <li><i class="fa-brands fa-instagram"></i></li>
+                        <li><i class="fa-brands fa-twitter"></i></li>
+                        <li><i class="fa-brands fa-facebook"></i></li>
+                    </ul>
+                </footer>
+
+            </div>
+            <!-- /Results Slide/ -->
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Jquery 3.6.1 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- Jquery UI -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <!-- Parsley -->
+    <script src="js/parsley.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/add8ac9e42.js" crossorigin="anonymous"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <!-- Daterange Picker JS -->
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
